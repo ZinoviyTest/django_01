@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from general.views import current_datetime
+from general.views import current_datetime_stop
+from django.conf.urls import include
 
 
 urlpatterns = [
-    path('', current_datetime),
+    path('', current_datetime_stop),
     path('admin/', admin.site.urls),
+    path('general/', include('general.urls'))
 ]
